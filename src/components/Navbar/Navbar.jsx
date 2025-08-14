@@ -1,6 +1,13 @@
 import { FaSearch, FaUser } from "react-icons/fa";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Categories", path: "/" },
+    { name: "About", path: "/" },
+  ];
+
   return (
     <nav className="navbar">
       <a className="navbar_logo" href="">
@@ -8,15 +15,11 @@ const Navbar = () => {
       </a>
 
       <ul className="navbar__list">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/">Categories</a>
-        </li>
-        <li>
-          <a href="/">About</a>
-        </li>
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <a href={link.path}>{link.name}</a>
+          </li>
+        ))}
       </ul>
 
       <div className="navbar__right">
