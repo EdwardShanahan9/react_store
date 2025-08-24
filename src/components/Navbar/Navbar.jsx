@@ -1,12 +1,19 @@
+import { useState } from "react";
 import { FaSearch, FaUser } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Categories", path: "/" },
     { name: "About", path: "/" },
   ];
+
+  const handleSearchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   return (
     <nav className="navbar">
@@ -22,12 +29,13 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="navbar__right">
+      <div className={`navbar__right ${isSearchOpen ? "active" : ""}`}>
         <div className="navbar__search">
           <input type="text" />
           <FaSearch
             className="navbar__search-icon"
             style={{ marginLeft: "8px" }}
+            onClick={handleSearchToggle}
           />
         </div>
         <FaUser
