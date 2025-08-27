@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaSearch, FaUser } from "react-icons/fa";
+import { FaSearch, FaUser, FaBars } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -40,6 +40,11 @@ const Navbar = () => {
         </div>
         <FaUser
           className="navbar__account-icon"
+          style={{ marginLeft: "16px" }}
+        />
+
+        <FaBars
+          className="navbar__hamburger-icon"
           style={{ marginLeft: "16px" }}
         />
       </div>

@@ -36,7 +36,6 @@
 .navbar__search {
   display: flex;
   align-items: center;
-  /* Remove border, padding, border-radius from default */
 }
 
 .navbar__right.active .navbar__search {
@@ -58,7 +57,6 @@
   font-size: 1.4rem;
 }
 
-/* When active, expand the input */
 .navbar__right.active .navbar__search input {
   width: 12rem;
   opacity: 1;
@@ -77,4 +75,23 @@
 .navbar__account-icon {
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.navbar__hamburger-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Tablet styles */
+@media (max-width: 820px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .navbar__list {
+    display: none;
+  }
+  .navbar__hamburger-icon {
+    display: block;
+  }
 }
