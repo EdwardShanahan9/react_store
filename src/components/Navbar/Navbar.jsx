@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaSearch, FaUser, FaBars } from "react-icons/fa";
 import "./Navbar.css";
+import MobileNavbar from "../MobileNavbar/MobileNavbar";
 
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -48,6 +49,8 @@ const Navbar = () => {
           style={{ marginLeft: "16px" }}
         />
       </div>
+
+      <MobileNavbar navLinks={navLinks} />
     </nav>
   );
 };
